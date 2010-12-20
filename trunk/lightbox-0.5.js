@@ -207,7 +207,7 @@
 			var bodyWidth = $(window).width();
 			var bodyHeight = $(window).height();
 			
-			jqImage.css( { width : null, height : null } );
+			jqImage.css( { width : 'auto', height : 'auto' } );
 			
 			// first check width
 			if ( intImageWidth > ( bodyWidth - (settings.containerBorderSize * 4) ) )
@@ -367,14 +367,11 @@
 				keycode = objEvent.keyCode;
 				escapeKey = objEvent.DOM_VK_ESCAPE;
 			}
-			console.log( escapeKey );
-			console.log( objEvent );
-			console.log( keycode );
 			
 			// Get the key in lower case form
 			key = String.fromCharCode(keycode).toLowerCase();
 			// Verify the keys to close the ligthBox
-			if ( ( key == settings.keyToClose ) || ( key == 'x' ) || ( keycode == escapeKey ) ) {
+			if ( ( key == settings.keyToClose ) || ( key == 'x' ) || ( keycode == escapeKey || keycode == 27 ) ) {
 				_finish();
 			}
 			// Verify the key to show the previous image
