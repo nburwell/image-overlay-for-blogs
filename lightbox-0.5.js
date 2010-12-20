@@ -203,19 +203,22 @@
 			// Get current width and height
 			var intCurrentWidth = $('#lightbox-container-image-box').width();
 			var intCurrentHeight = $('#lightbox-container-image-box').height();
-			// Get the width and height of the selected image plus the padding
-			var intWidth = (intImageWidth + (settings.containerBorderSize * 2)); // Plus the image큦 width and the left and right padding value
-			var intHeight = (intImageHeight + (settings.containerBorderSize * 2)); // Plus the image큦 height and the left and right padding value
 			
 			var bodyWidth = $('body').width();
 			var bodyHeight = $('body').height();
 			
-			if ( intWidth > bodyWidth )
+			if ( intImageWidth > bodyWidth )
 			{
-				var width = bodyWidth - 5;
-				intHeight = ( intHeight * width ) / intWidth;
-				intWidth  = width;
+				var width      = bodyWidth - 5;
+				intImageHeight = ( intImageHeight * width ) / intImageWidth;
+				intImageWidth  = width;
 			}
+			
+			// Get the width and height of the selected image plus the padding
+			var intWidth = (intImageWidth + (settings.containerBorderSize * 2)); // Plus the image큦 width and the left and right padding value
+			var intHeight = (intImageHeight + (settings.containerBorderSize * 2)); // Plus the image큦 height and the left and right padding value
+			
+			
 			
 			// Diferences
 			var intDiffW = intCurrentWidth - intWidth;
