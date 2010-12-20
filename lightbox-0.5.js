@@ -208,21 +208,21 @@
 			var bodyHeight = $(window).height();
 			
 			// first check width
-			if ( intImageWidth > bodyWidth )
+			if ( intImageWidth > ( bodyWidth - (settings.containerBorderSize * 4) )
 			{
 				var width      = bodyWidth - (settings.containerBorderSize * 4);
-				intImageHeight = (( intImageHeight * width ) / intImageWidth ) - (settings.containerBorderSize * 4);
+				intImageHeight = (( intImageHeight * width ) / intImageWidth );
 				intImageWidth  = width;
 				
-				jqImage.css( { width : width } );
+				jqImage.css( { width : intImageWidth } );
 				
-				if ( intImageHeight > bodyHeight )
+				if ( intImageHeight > ( bodyHeight - (settings.containerBorderSize * 4) )
 				{
 					var height = bodyHeight - (settings.containerBorderSize * 4);
-					intImageWidth  = (( intImageWidth * height ) / intImageHeight ) - (settings.containerBorderSize * 4);
+					intImageWidth  = (( intImageWidth * height ) / intImageHeight );
 					intImageHeight = height;
 
-					jqImage.css( { height : height } );
+					jqImage.css( { height : intImageHeight, width: intImageWidth } );
 				}
 			}
 			
