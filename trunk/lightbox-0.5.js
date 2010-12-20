@@ -207,6 +207,8 @@
 			var bodyWidth = $(window).width();
 			var bodyHeight = $(window).height();
 			
+			jqImage.css( { width : null, height : null } );
+			
 			// first check width
 			if ( intImageWidth > ( bodyWidth - (settings.containerBorderSize * 4) ) )
 			{
@@ -215,15 +217,16 @@
 				intImageWidth  = width;
 				
 				jqImage.css( { width : intImageWidth } );
-				
-				if ( intImageHeight > ( bodyHeight - (settings.containerBorderSize * 8) ) )
-				{
-					var height = bodyHeight - (settings.containerBorderSize * 8);
-					intImageWidth  = parseInt(( intImageWidth * height ) / intImageHeight );
-					intImageHeight = height;
+			}
+			
+			// now check the height
+			if ( intImageHeight > ( bodyHeight - (settings.containerBorderSize * 8) ) )
+			{
+				var height = bodyHeight - (settings.containerBorderSize * 8);
+				intImageWidth  = parseInt(( intImageWidth * height ) / intImageHeight );
+				intImageHeight = height;
 
-					jqImage.css( { height: intImageHeight, width: intImageWidth } );
-				}
+				jqImage.css( { height: intImageHeight, width: intImageWidth } );
 			}
 			
 			// Get the width and height of the selected image plus the padding
