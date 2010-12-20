@@ -216,9 +216,9 @@
 				
 				jqImage.css( { width : intImageWidth } );
 				
-				if ( intImageHeight > ( bodyHeight - (settings.containerBorderSize * 4) ) )
+				if ( intImageHeight > ( bodyHeight - (settings.containerBorderSize * 8) ) )
 				{
-					var height = bodyHeight - (settings.containerBorderSize * 4);
+					var height = bodyHeight - (settings.containerBorderSize * 8);
 					intImageWidth  = parseInt(( intImageWidth * height ) / intImageHeight );
 					intImageHeight = height;
 
