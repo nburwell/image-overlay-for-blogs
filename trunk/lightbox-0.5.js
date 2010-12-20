@@ -139,7 +139,7 @@
 			var arrPageScroll = ___getPageScroll();
 			// Calculate top and left offset for the jquery-lightbox div object and show it
 			$('#jquery-lightbox').css({
-				top:	arrPageScroll[1] + (arrPageSizes[3] / 10),
+				top:	arrPageScroll[1] + 20; // (arrPageSizes[3] / 10),
 				left:	arrPageScroll[0]
 			}).show();
 			// Assigning click events in elements to close overlay
@@ -164,7 +164,7 @@
 				var arrPageScroll = ___getPageScroll();
 				// Calculate top and left offset for the jquery-lightbox div object and show it
 				$('#jquery-lightbox').css({
-					top:	arrPageScroll[1] + (arrPageSizes[3] / 10),
+					top:	arrPageScroll[1] + 20; // (arrPageSizes[3] / 10),
 					left:	arrPageScroll[0]
 				});
 			});
@@ -364,6 +364,10 @@
 				keycode = objEvent.keyCode;
 				escapeKey = objEvent.DOM_VK_ESCAPE;
 			}
+			console.log( escapeKey );
+			console.log( objEvent );
+			console.log( keycode );
+			
 			// Get the key in lower case form
 			key = String.fromCharCode(keycode).toLowerCase();
 			// Verify the keys to close the ligthBox
