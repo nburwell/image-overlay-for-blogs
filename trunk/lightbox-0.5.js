@@ -187,7 +187,7 @@
 			objImagePreloader.onload = function() {
 				$('#lightbox-image').attr('src',settings.imageArray[settings.activeImage][0]);
 				// Perfomance an effect in the image container resizing it
-				_resize_container_image_box(objImagePreloader.width,objImagePreloader.height, objImagePreloader);
+				_resize_container_image_box(objImagePreloader.width,objImagePreloader.height, $('#lightbox-image') );
 				//	clear onLoad, IE behaves irratically with animated gifs otherwise
 				objImagePreloader.onload=function(){};
 			};
@@ -199,7 +199,7 @@
 		 * @param integer intImageWidth The image´s width that will be showed
 		 * @param integer intImageHeight The image´s height that will be showed
 		 */
-		function _resize_container_image_box(intImageWidth,intImageHeight, image) {
+		function _resize_container_image_box(intImageWidth,intImageHeight, jqImage) {
 			// Get current width and height
 			var intCurrentWidth = $('#lightbox-container-image-box').width();
 			var intCurrentHeight = $('#lightbox-container-image-box').height();
@@ -213,7 +213,7 @@
 				intImageHeight = ( intImageHeight * width ) / intImageWidth;
 				intImageWidth  = width;
 				
-				image.width = width;
+				jqImage.css( { width : width } );
 			}
 			
 			// Get the width and height of the selected image plus the padding
