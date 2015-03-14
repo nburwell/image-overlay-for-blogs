@@ -1,0 +1,1 @@
+non-obtrustive javascript code for showing images in an overlay lightbox
